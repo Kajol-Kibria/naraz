@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 import { IoHeart, IoStar } from 'react-icons/io5';
 
@@ -11,7 +12,7 @@ export default function ProductCard({product}) {
                 <Image src={product.image} width={200} height={150} className='w-[60%] h-[300px] object-contain mx-auto'/>
                 <div className='px-8 space-y-2 mt-8 w-[90vw] sm:w-96 '>
                 <p className='text-gray-500 '>{product.category}</p>
-                <p className='truncate hover:cursor-pointer hover:underline text-xl '>{product.title}</p>
+                <Link href={`./product/product-details/${product.id}`}><p className='truncate hover:cursor-pointer hover:underline text-xl '>{product.title}</p></Link>
                 <p className='flex gap-1 text-orange-400 '>{ratingArray.map(()=>{
                   return <IoStar/>
                 })}</p>
