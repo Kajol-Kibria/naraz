@@ -27,12 +27,12 @@ export default function Home() {
     <div className=''>
       <p className='text-2xl font-bold text-center  my-5 sm:my-12 '>All Product</p>
         {loading?(
-            <div className='flex items-center justify-center my-20 '><AiOutlineLoading3Quarters size={45} className='animate-spin'/></div>
+            <div className=' flex items-center justify-center my-20 '><AiOutlineLoading3Quarters size={45} className='animate-spin'/></div>
         ):(
-          <div className='w-4/5 grid sm:grid-cols-4 sm:m-20 gap-5'>
+          <div className=' grid sm:grid-cols-4 sm:m-20'>
             {products.map((product)=>{
               return (
-                <div className=''><ProductCard product={product}/></div>
+                <div key={product.id} className='w-4/5'><ProductCard product={product}/></div>
               )
             })}
           </div>

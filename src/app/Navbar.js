@@ -5,6 +5,7 @@ import { FiSearch } from "react-icons/fi";
 import { FiUser } from "react-icons/fi";
 import { LuShoppingBag } from "react-icons/lu";
 import Link from 'next/link';
+import {SignInButton,SignedIn,SignedOut, UserButton} from '@clerk/nextjs'
 
 
 
@@ -20,7 +21,15 @@ export default function Navbar() {
         <FiSearch/>
         <GoHeart/>
         <LuShoppingBag/>
-        <FiUser className='cursor-pointer'/>
+
+        <SignedOut>
+          <SignInButton><button className='bg-blue-500 py-1 sm:px-3 px-1 sm:text-sm text-xs text-white rounded-md'>Sign In</button></SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        
+      
       </div>
       
     </div>

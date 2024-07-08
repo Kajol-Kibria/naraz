@@ -9,7 +9,7 @@ export default function ProductCard({product}) {
   return (
     <div>
             <div className=''>
-                <Image src={product.image} width={200} height={150} className='w-[60%] h-[300px] object-contain mx-auto'/>
+            <Link href={`./product/product-details/${product.id}`}><Image src={product.image} alt='image' width={200} height={150} className='w-[60%] h-[300px] object-contain mx-auto mt-16'/></Link>
                 <div className='px-8 space-y-2 mt-8 w-[90vw] sm:w-96 '>
                 <p className='text-gray-500 '>{product.category}</p>
                 <Link href={`./product/product-details/${product.id}`}><p className='truncate hover:cursor-pointer hover:underline text-xl '>{product.title}</p></Link>
