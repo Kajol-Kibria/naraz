@@ -19,7 +19,7 @@ export default async function ProductDetails({params}) {
           <div className='sm:w-[27%]'>
           <div className='flex gap-2 items-center my-4'>
             <p className='flex gap-1'>{rateArray.map(()=>{
-            return <IoStar className='text-orange-500'/>
+            return <IoStar key={Math.random()} className='text-orange-500'/>
           })}</p>
           <div className='flex items-center gap-1'>(<p>{product.rating.count}</p> <p> Reviews</p>) </div>
           
@@ -39,11 +39,11 @@ export default async function ProductDetails({params}) {
           <h1 className='font-bold text-2xl'>Related Products</h1>
           <div className='grid sm:grid-cols-4 grid-cols-1 justify-center items-center'>
             {related.map((a)=>{
-              return <div className='w-[80%]'>
+              return <div key={a.id} className='w-[80%]'>
                 <Link href={`./${a.id}`}><Image src={a.image} alt='image' width={100} height={100} className='w-[40%] h-[250px] object-contain mx-auto'/></Link>
                 <Link href={`./${a.id}`}><p className='truncate hover:cursor-pointer hover:underline text-xl '>{a.title}</p></Link>
                 <p className='flex gap-1 text-orange-400 my-2'>{(new Array(Math.round(a.rating.rate)).fill(0)).map(()=>{
-                  return <IoStar/>
+                  return <IoStar key={Math.random()}/>
                 })}</p>
                 <div className='flex items-center gap-3 '>
                 <p className='text-base line-through text-gray-700'>{`$${(a.price + 15).toFixed(2)}`}</p>

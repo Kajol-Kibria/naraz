@@ -14,7 +14,7 @@ export default function ProductCard({product}) {
                 <p className='text-gray-500 '>{product.category}</p>
                 <Link href={`./product/product-details/${product.id}`}><p className='truncate hover:cursor-pointer hover:underline text-xl '>{product.title}</p></Link>
                 <p className='flex gap-1 text-orange-400 '>{ratingArray.map(()=>{
-                  return <IoStar/>
+                  return <IoStar key={Math.random()}/>
                 })}</p>
                 <div className='flex items-center gap-3 '>
                 <p className='text-base line-through text-gray-700'>{`$${(product.price + 15).toFixed(2)}`}</p>
